@@ -6,25 +6,35 @@ const AuthContainer = styled.div`
   padding: 4rem 2rem;
   background: beige;
   height: 100%;
-  outline: 1px solid red;
+  outline: 1px dotted red;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: start;
+  // justify-content: start;
   align-items: center;
+
 `;
 const AuthInputContainerGroups = styled.div`
   outline: 1px solid blue;
   margin: 7rem 0 5rem 0;
 `;
 const AuthInputContainer = styled.div`
-  // outline: 1px solid blue;
+  outline: 1px solid blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
   font-size: 15px;
 `;
+
+const StyledBtnGroup = styled.div`
+  outline: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+`;
+
 const StyledP = styled.p`
   outline: 1px solid blue;
   margin-top: 1rem;
@@ -33,20 +43,11 @@ const StyledP = styled.p`
   line-height: 15px;
 `;
 
-const SignUpPage = () => {
+const SignInPage = () => {
   return (
     <AuthContainer>
-      <PageTitle title="Sign Up" />
+      <PageTitle title="Login" />
       <AuthInputContainerGroups>
-        <AuthInputContainer>
-          <AuthInput
-            label="Full Name"
-            placeholder="your name"
-            value={"John Doe"}
-            // onChange={(nameInputValue) => setUsername(nameInputValue)}
-          />
-        </AuthInputContainer>
-
         <AuthInputContainer>
           <AuthInput
             label="Email"
@@ -65,24 +66,20 @@ const SignUpPage = () => {
             // onChange={(passwordInputValue) => setPassword(passwordInputValue)}
           />
         </AuthInputContainer>
-
-        <AuthInputContainer>
-          <AuthInput
-            type="password"
-            label="Confirm Password"
-            placeholder="your password"
-            value={"password"}
-            // onChange={(passwordInputValue) => setPassword(passwordInputValue)}
-          />
-        </AuthInputContainer>
       </AuthInputContainerGroups>
-      <AuthButton btnTitle="Sign Up"></AuthButton>
+
+      <StyledBtnGroup>
+        <AuthButton btnTitle="Sign in"></AuthButton>
+        <AuthButton btnTitle="Sign Up"></AuthButton>
+      </StyledBtnGroup>
+
       {/* <AuthButton onClick={handleClick}>註冊</AuthButton> */}
       {/* <Link to="/login">
-        <AuthLinkText>取消</AuthLinkText>
-      </Link> */}
-      <StyledP>Already have an account? Log In </StyledP>
+      <AuthLinkText>取消</AuthLinkText>
+    </Link> */}
+      <StyledP>{`Don’t have an account? Sign Up `}</StyledP>
     </AuthContainer>
   );
 };
-export default SignUpPage;
+export default SignInPage
+
