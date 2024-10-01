@@ -1,0 +1,1 @@
+export { default as RecipeInfoBar } from 'src/components/elements/Card/RecipeInfoBar' 
